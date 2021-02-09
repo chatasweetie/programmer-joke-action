@@ -1,0 +1,41 @@
+intentEvents:
+- intent: joke
+  transitionToScene: Jokes
+- intent: another
+  transitionToScene: Jokes
+- handler:
+    webhookHandler: howManyJokes
+  intent: howManyJokes
+- handler:
+    webhookHandler: howManyLeft
+  intent: howManyLeft
+- handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          lastSimple:
+            variants:
+            - speech: Great, I've reset my list of jokes and we'll start from the
+                beginning
+          suggestions:
+          - title: joke
+  intent: reset
+  transitionToScene: Jokes
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: Do you want another joke?
+          - speech: Another one?
+          - speech: This is fun, want another joke?
+          - speech: Oh my, these jokes are amazing. I used Google Search to find only
+              the best for you. Want another joke?
+          - speech: I can do this all day. What do you think of another joke?
+          - speech: That was one of my favorites. What to hear another?
+          - speech: Want some more?
+          - speech: That was good, I can tell you more. Yeah?
+        suggestions:
+        - title: joke
+  webhookHandler: joke

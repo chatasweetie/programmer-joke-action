@@ -1,0 +1,10 @@
+handler:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: Sorry, do you want to hear a joke or compliment?
+        suggestions:
+        - title: jokes
+        - title: compliments

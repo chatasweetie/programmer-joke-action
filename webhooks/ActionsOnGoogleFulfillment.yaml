@@ -1,0 +1,7 @@
+handlers:
+- name: joke
+- name: setup
+- name: howManyJokes
+- name: howManyLeft
+inlineCloudFunction:
+  executeFunction: ActionsOnGoogleFulfillment
